@@ -28,6 +28,7 @@ return {
         -- Configure the appearance of floating diagnostic windows.
         border = 'rounded', -- Use rounded borders for the floating window.
         source = 'if_many', -- Always show the source of the diagnostic (e.g., 'pyright').
+        prefix = ' ',
       },
     }
     -- Brief aside: **What is LSP?**
