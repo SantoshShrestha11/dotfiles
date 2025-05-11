@@ -91,3 +91,14 @@ end, { desc = 'Toggle UndoTree' })
 
 -- Dismiss Noice Message
 vim.keymap.set('n', '<leader>q', '<cmd>NoiceDismiss<CR>', { desc = 'Dismiss Noice Message' })
+
+-- Keymaps for Fugitive
+vim.api.nvim_set_keymap('n', '<leader>gs', ':Git<CR>', { noremap = true, silent = true, desc = 'Git Status' })
+vim.api.nvim_set_keymap('n', '<leader>gc', ':Git commit<CR>', { noremap = true, silent = true, desc = 'Git Commit' })
+vim.api.nvim_set_keymap('n', '<leader>ga', ':Git add .<CR>', { noremap = true, silent = true, desc = 'Git Add' })
+vim.api.nvim_set_keymap('n', '<leader>gd', ':Gdiff<CR>', { noremap = true, silent = true, desc = 'Git Diff' })
+vim.api.nvim_set_keymap('n', '<leader>gl', ':Gclog<CR>', { noremap = true, silent = true, desc = 'Git Log' })
+vim.api.nvim_set_keymap('n', '<leader>gb', ':Git blame<CR>', { noremap = true, silent = true, desc = 'Git Blame' })
+vim.api.nvim_set_keymap('n', '<leader>gp', ':Git push<CR>', { noremap = true, silent = true, desc = 'Git Push' })
+vim.api.nvim_set_keymap('n', '<leader>gf', ':Git fetch<CR>', { noremap = true, silent = true, desc = 'Git Fetch' })
+vim.api.nvim_set_keymap('n', '<leader>gr', ':Git rebase<CR>', { noremap = true, silent = true, desc = 'Git Rebase' })
