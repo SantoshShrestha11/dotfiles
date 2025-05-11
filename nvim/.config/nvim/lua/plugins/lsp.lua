@@ -22,8 +22,13 @@ return {
       -- virtual_text = { current_line = true }, -- Display virtual text for diagnostics directly in the current_line
       -- virtual_lines = { current_line = true }, -- Display virtual lines for diagnostics directly in the current_line
       signs = true, -- Display signs in the gutter for diagnostics
-      underline = true, -- Underline code with errors/warnings
+      underline = false, -- Underline code with errors/warnings
       severity_sort = true, -- Sort diagnostics by severity (e.g., errors first)
+      float = {
+        -- Configure the appearance of floating diagnostic windows.
+        border = 'rounded', -- Use rounded borders for the floating window.
+        source = 'if_many', -- Always show the source of the diagnostic (e.g., 'pyright').
+      },
     }
     -- Brief aside: **What is LSP?**
     --
