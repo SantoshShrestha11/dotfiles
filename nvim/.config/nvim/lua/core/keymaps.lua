@@ -101,4 +101,4 @@ vim.api.nvim_set_keymap('n', '<leader>gl', ':Gclog<CR>', { noremap = true, silen
 vim.api.nvim_set_keymap('n', '<leader>gb', ':Git blame<CR>', { noremap = true, silent = true, desc = 'Git Blame' })
 vim.api.nvim_set_keymap('n', '<leader>gp', ':Git push<CR>', { noremap = true, silent = true, desc = 'Git Push' })
 vim.api.nvim_set_keymap('n', '<leader>gf', ':Git fetch<CR>', { noremap = true, silent = true, desc = 'Git Fetch' })
-vim.api.nvim_set_keymap('n', '<leader>gr', ':Git rebase<CR>', { noremap = true, silent = true, desc = 'Git Rebase' })
+-- vim.api.nvim_set_keymap('n', '<leader>gr', ':Git rebase<CR>', { noremap = true, silent = true, desc = 'Git Rebase' })
