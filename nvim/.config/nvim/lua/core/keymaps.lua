@@ -95,7 +95,8 @@ vim.keymap.set('n', '<leader>q', '<cmd>NoiceDismiss<CR>', { desc = 'Dismiss Noic
 -- Keymaps for Fugitive
 vim.api.nvim_set_keymap('n', '<leader>gs', ':Git<CR>', { noremap = true, silent = true, desc = 'Git Status' })
 vim.api.nvim_set_keymap('n', '<leader>gc', ':Git commit<CR>', { noremap = true, silent = true, desc = 'Git Commit' })
-vim.api.nvim_set_keymap('n', '<leader>ga', ':Git add .<CR>', { noremap = true, silent = true, desc = 'Git Add' })
+vim.api.nvim_set_keymap('n', '<leader>ga', ':Git add .<CR>', { noremap = true, silent = true, desc = 'Git Add All changes' })
+vim.api.nvim_set_keymap('n', '<leader>gw', ':Gwrite<CR>', { noremap = true, silent = true, desc = 'Git Write' })
 vim.api.nvim_set_keymap('n', '<leader>gd', ':Gdiff<CR>', { noremap = true, silent = true, desc = 'Git Diff' })
 vim.api.nvim_set_keymap('n', '<leader>gl', ':Gclog<CR>', { noremap = true, silent = true, desc = 'Git Log' })
 vim.api.nvim_set_keymap('n', '<leader>gb', ':Git blame<CR>', { noremap = true, silent = true, desc = 'Git Blame' })
