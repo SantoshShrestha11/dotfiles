@@ -17,10 +17,10 @@ return {
   config = function()
     vim.diagnostic.config {
       -- Show diagnostics while typing (in insert mode)
-      update_in_insert = true, -- You can set this to false if you don't want diagnostics while typing
-      virtual_text = false, -- Display virtual text for diagnostics directly in the code
+      update_in_insert = false, -- You can set this to false if you don't want diagnostics while typing
+      virtual_text = true, -- Display virtual text for diagnostics directly in the code
       -- virtual_text = { current_line = true }, -- Display virtual text for diagnostics directly in the current_line
-      virtual_lines = { current_line = true }, -- Display virtual lines for diagnostics directly in the current_line
+      -- virtual_lines = { current_line = true }, -- Display virtual lines for diagnostics directly in the current_line
       signs = true, -- Display signs in the gutter for diagnostics
       underline = true, -- Underline code with errors/warnings
       severity_sort = true, -- Sort diagnostics by severity (e.g., errors first)

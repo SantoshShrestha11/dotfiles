@@ -47,7 +47,7 @@ return {
         },
         buffer_selected = {
           bold = true,
-          italic = false,
+          italic = true,
         },
         -- separator_selected = {},
         -- tab_selected = {},
