@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.hl.on_yank {
       higroup = 'YankHighlight', -- Use your custom highlight group
-      timeout = 200, -- Duration in milliseconds
+      timeout = 100, -- Duration in milliseconds
     }
   end,
   group = highlight_group,
