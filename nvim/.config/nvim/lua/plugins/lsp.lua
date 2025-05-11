@@ -28,7 +28,10 @@ return {
         -- Configure the appearance of floating diagnostic windows.
         border = 'rounded', -- Use rounded borders for the floating window.
         source = 'if_many', -- Always show the source of the diagnostic (e.g., 'pyright').
-        prefix = ' ',
+        prefix = '● ', -- Adds a prefix symbol to each diagnostic message
+        format = function(diagnostic)
+          return string.format('[%s] %s', diagnostic.code or 'NoCode', diagnostic.message)
+        end,
       },
     }
     -- Brief aside: **What is LSP?**
