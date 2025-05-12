@@ -76,6 +76,17 @@ return { -- Autocompletion
         end,
       },
       completion = { completeopt = 'menu,menuone,noinsert' },
+      window = {
+        completion = {
+          border = 'single',
+          scrollbar = false,
+          winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel',
+        },
+        documentation = {
+          border = 'single',
+          winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder',
+        },
+      },
 
       -- For an understanding of why these mappings were
       -- chosen, you will need to read `:help ins-completion`
