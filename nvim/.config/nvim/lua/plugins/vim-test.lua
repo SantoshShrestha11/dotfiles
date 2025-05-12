@@ -1,6 +1,6 @@
 return {
   'vim-test/vim-test',
-  enabled = false,
+  enabled = true,
   dependencies = {
     'preservim/vimux',
   },
