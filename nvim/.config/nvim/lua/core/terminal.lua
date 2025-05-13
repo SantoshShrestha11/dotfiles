@@ -72,8 +72,8 @@ function run.setup()
   -- vim.keymap.set('n', '<Leader>f', M.open_float_term, { noremap = true, silent = true })
 
   vim.keymap.set('n', '<Leader>f', function()
-    run.open_float_term 'run'
-  end, { noremap = true, silent = true, desc = 'Run the script' })
+    run.open_float_term 'code-runner'
+  end, { noremap = true, silent = true, desc = 'Run the code-runner script' })
 
   -- When silent is set to false,
   -- it means that Neovim will show output on the command line when the keybinding is triggered.
