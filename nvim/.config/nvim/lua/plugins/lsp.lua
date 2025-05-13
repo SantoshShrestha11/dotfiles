@@ -211,7 +211,6 @@ return {
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
       ts_ls = {}, -- tsserver is deprecated
-      -- ruff = {}, --it is a linter for python i can un comment it when I want to code in python.
       -- pylsp = {
       --   settings = {
       --     pylsp = {
@@ -289,6 +288,7 @@ return {
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
+      'bash-language-server', --language server for the bash
       'stylua', -- Used to format Lua code
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
