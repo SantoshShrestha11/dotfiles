@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
-file=$(find . -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+file=$(find . -type f \
+    -not -path './target/*' \
+    -not -path './.git/*' \
+    -not -name '*.lock' \
+    -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+
 extension="${file##*.}"
 
-if [ "$file" = "Cargo.toml" ]; then
+if [ "$file" = "./Cargo.toml" ]; then
     echo "Detected changes in 'Cargo.toml'. Running 'cargo build' to compile the project..."
     cargo build
     exit 0
