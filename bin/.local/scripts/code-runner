@@ -4,29 +4,29 @@ file=$(find . -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
 extension="${file##*.}"
 
 if [ "$file" = "Cargo.toml" ]; then
-    echo "Cargo.toml was modified. Running cargo build..."
+    echo "Detected changes in 'Cargo.toml'. Running 'cargo build' to compile the project..."
     cargo build
     exit 0
 fi
 
 case "$extension" in
 c)
-    echo "Compiling C file: $file"
+    echo "Compiling C file: $file with 'gcc'..."
     gcc "$file" && ./a.out
     ;;
 cpp)
-    echo "Compiling C++ file: $file"
+    echo "Compiling C++ file: $file with 'g++'..."
     g++ "$file" && ./a.out
     ;;
 js)
-    echo "Running js file: $file"
+    echo "Executing JavaScript file: $file with 'node'..."
     node "$file"
     ;;
 rs)
-    echo "Running Rust project: $file"
+    echo "Running Rust project: $file with 'cargo run'..."
     cargo run
     ;;
 *)
-    echo "Damn it! got the wrong file in the buffer: .$file"
+    echo "Damn it! got the wrong file in the buffer: .$file (extension: .$extension)"
     ;;
 esac
