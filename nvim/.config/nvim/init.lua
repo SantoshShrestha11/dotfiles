@@ -1,6 +1,6 @@
-require 'core.options'              -- Load general options
-require 'core.keymaps'              -- Load general keymaps
-require 'core.snippets'             -- Custom code snippets
+require 'core.options' -- Load general options
+require 'core.keymaps' -- Load general keymaps
+require 'core.snippets' -- Custom code snippets
 require('core.code-runner').setup() -- Custom code-runner
 vim.opt.termguicolors = true
 
