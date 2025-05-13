@@ -27,6 +27,6 @@ rs)
     cargo run
     ;;
 *)
-    echo "Damn it! got the wrong file in the buffer: .$extension"
+    echo "Damn it! got the wrong file in the buffer: .$file"
     ;;
 esac
