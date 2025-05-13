@@ -3,6 +3,12 @@
 file=$(find . -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
 extension="${file##*.}"
 
+if [ "$file" = "Cargo.toml" ]; then
+    echo "Cargo.toml was modified. Running cargo build..."
+    cargo build
+    exit 0
+fi
+
 case "$extension" in
 c)
     echo "Compiling C file: $file"
