@@ -16,6 +16,10 @@ js)
     echo "Running js file: $file"
     node "$file"
     ;;
+rs)
+    echo "Running Rust project: $file"
+    cargo run
+    ;;
 *)
     echo "Damn it! got the wrong file in the buffer: .$extension"
     ;;
