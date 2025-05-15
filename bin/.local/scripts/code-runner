@@ -18,7 +18,7 @@ if [[ "$file" = "./src/lib.rs" ]] ||
     [[ "$file" = "./lib.rs" ]] ||
     [[ "$file" = ./src/tests/* ]] ||
     [[ "$file" = ./tests/* ]]; then
-    echo "Detected changes in 'lib.rs'. Running 'cargo test' to run the test..."
+    echo "Detected changes in 'lib.rs' or test files. Running 'cargo test' to run the test..."
     cargo test
     exit 0
 fi
