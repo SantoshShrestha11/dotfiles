@@ -26,7 +26,7 @@ return { -- Autocompletion
       },
     },
     'saadparwaiz1/cmp_luasnip',
-    -- 'github/copilot.vim',
+    'github/copilot.vim',
 
     -- Adds other completion capabilities.
     --  nvim-cmp does not ship with all sources by default. They are split
