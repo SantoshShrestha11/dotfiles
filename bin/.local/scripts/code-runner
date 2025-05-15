@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
-file=$(find . -type f \
-    -not -path './target/*' \
-    -not -path './.git/*' \
-    -not -name '*.lock' \
-    -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-)
+file=$(
+    find . -type f \
+        -not -path './target/*' \
+        -not -path './.git/*' \
+        -not -name '*.lock' \
+        -printf "%T@ %p\n" | sort -n | tail -1 | awk '{ $1=""; sub(/^ /, ""); print }'
+    # -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2-
+)
 
 extension="${file##*.}"
 
