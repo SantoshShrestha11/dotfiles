@@ -19,8 +19,8 @@ return {
         'clang-format', -- C/C++ formatter
         -- 'checkmake', -- linter for Makefiles
         -- 'ruff', -- Python linter and formatter
-        'taplo', --Toml lsp
-        -- 'rustfmt', -- Rust formatter
+        'taplo',   --Toml lsp
+        'rustfmt', -- Rust formatter
       },
       automatic_installation = true,
     }
