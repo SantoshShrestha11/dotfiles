@@ -101,5 +101,5 @@ vim.api.nvim_set_keymap('n', '<leader>gb', ':Git blame<CR>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<leader>gp', ':Git push<CR>', { noremap = true, silent = true, desc = 'Git Push' })
 vim.api.nvim_set_keymap('n', '<leader>gf', ':Git fetch<CR>', { noremap = true, silent = true, desc = 'Git Fetch' })
 vim.api.nvim_set_keymap('n', '<leader>gr', ':Gread<CR>',
-  { noremap = true, silent = true, desc = 'Git: revert buffer to HEAD' })
+  { noremap = true, silent = true, desc = 'Git: restore buffer to HEAD' })
 -- vim.api.nvim_set_keymap('n', '<leader>gr', ':Git rebase<CR>', { noremap = true, silent = true, desc = 'Git Rebase' })
