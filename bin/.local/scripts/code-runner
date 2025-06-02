@@ -44,6 +44,10 @@ rs)
     echo "Running Rust project: $file with 'cargo run'..."
     cargo run
     ;;
+php)
+    echo "Running php project: $file with 'php'..."
+    php "$file"
+    ;;
 *)
     echo "Damn it! got the wrong file in the buffer: .$file (extension: .$extension)"
     ;;

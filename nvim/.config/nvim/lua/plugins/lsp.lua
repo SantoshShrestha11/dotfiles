@@ -9,7 +9,7 @@ return {
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { 'j-hui/fidget.nvim', opts = {} },
+    { 'j-hui/fidget.nvim',       opts = {} },
 
     -- Allows extra capabilities provided by nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
@@ -18,11 +18,11 @@ return {
     vim.diagnostic.config {
       -- Show diagnostics while typing (in insert mode)
       update_in_insert = false, -- You can set this to false if you don't want diagnostics while typing
-      virtual_text = true, -- Display virtual text for diagnostics directly in the code
+      virtual_text = true,      -- Display virtual text for diagnostics directly in the code
       -- virtual_text = { current_line = true }, -- Display virtual text for diagnostics directly in the current_line
       -- virtual_lines = { current_line = true }, -- Display virtual lines for diagnostics directly in the current_line
-      signs = true, -- Display signs in the gutter for diagnostics
-      underline = false, -- Underline code with errors/warnings
+      signs = true,         -- Display signs in the gutter for diagnostics
+      underline = false,    -- Underline code with errors/warnings
       severity_sort = true, -- Sort diagnostics by severity (e.g., errors first)
       float = {
         -- Configure the appearance of floating diagnostic windows.
@@ -207,6 +207,7 @@ return {
       -- },
       html = { filetypes = { 'html', 'twig', 'hbs', 'tera' } },
       cssls = {},
+      intelephense = {},
       tailwindcss = {
         filetype = { 'html', 'css', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
         capabilities = capabilities,
@@ -214,7 +215,7 @@ return {
           tailwindCSS = {
             experimental = {
               classRegex = {
-                'class="([^"]*)"', -- matches class="...
+                'class="([^"]*)"',     -- matches class="...
                 'className="([^"]*)"', -- matches className="...
                 'classList="([^"]*)"', -- for Alpine.js
               },
@@ -308,7 +309,7 @@ return {
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       'bash-language-server', --language server for the bash
-      'stylua', -- Used to format Lua code
+      'stylua',               -- Used to format Lua code
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
