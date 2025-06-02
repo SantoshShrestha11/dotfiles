@@ -33,6 +33,7 @@ return { -- Highlight, edit, and navigate code
       'html',
       'rust',
       'ron',
+      'php',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
@@ -112,7 +113,7 @@ return { -- Highlight, edit, and navigate code
           -- mapping query_strings to modes.
           selection_modes = {
             ['@parameter.outer'] = 'v', -- charwise
-            ['@function.outer'] = 'V', -- linewise
+            ['@function.outer'] = 'V',  -- linewise
             ['@class.outer'] = '<c-v>', -- blockwise
           },
           -- If you set this to `true` (default is `false`) then any textobject is
