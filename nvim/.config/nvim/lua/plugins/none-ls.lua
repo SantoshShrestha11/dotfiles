@@ -6,21 +6,21 @@ return {
   },
   config = function()
     local null_ls = require 'null-ls'
-    local formatting = null_ls.builtins.formatting   -- to setup formatters
+    local formatting = null_ls.builtins.formatting -- to setup formatters
     local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
     -- Formatters & linters for mason to install
     require('mason-null-ls').setup {
       ensure_installed = {
-        'prettier',     -- ts/js formatter
-        'stylua',       -- lua formatter
-        'eslint_d',     -- ts/js linter
-        'shfmt',        -- Shell formatter
+        'prettier', -- ts/js formatter
+        'stylua', -- lua formatter
+        'eslint_d', -- ts/js linter
+        'shfmt', -- Shell formatter
         'clang-format', -- C/C++ formatter
         -- 'checkmake', -- linter for Makefiles
         -- 'ruff', -- Python linter and formatter
-        'taplo',   --Toml lsp
-        'rustfmt', -- Rust formatter
+        'taplo', --Toml lsp
+        -- 'rustfmt', -- Rust formatter
       },
       automatic_installation = true,
     }
@@ -32,7 +32,7 @@ return {
       formatting.shfmt.with { args = { '-i', '4' } },
       formatting.terraform_fmt,
       formatting.clang_format,
-      formatting.rustfmt,
+      -- formatting.rustfmt,
       -- require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
       -- require 'none-ls.formatting.ruff_format',
     }
