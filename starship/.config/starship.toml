@@ -23,7 +23,7 @@ disabled = false
 
 [os.symbols]
 Linux = "󰌽"
-Arch = "󰣇"
+Arch = " 󰣇"
 
 # Username with cool styling
 [username]
