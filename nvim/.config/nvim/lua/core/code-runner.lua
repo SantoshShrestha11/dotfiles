@@ -69,7 +69,7 @@ end
 -- Set up keymappings and commands
 function run.setup()
   -- Basic terminal
-  -- vim.keymap.set('n', '<Leader>f', M.open_float_term, { noremap = true, silent = true })
+  -- vim.keymap.set('n', '<Leader>f', run.open_float_term, { noremap = true, silent = true })
 
   vim.keymap.set('n', '<Leader>f', function()
     run.open_float_term 'code-runner'
@@ -80,15 +80,15 @@ function run.setup()
 
   -- Some useful predefined terminals
   -- vim.keymap.set('n', '<Leader>fg', function()
-  --   M.open_float_term 'lazygit'
+  --   run.open_float_term 'lazygit'
   -- end, { noremap = true, silent = true, desc = 'Open LazyGit in floating terminal' })
   --
   -- vim.keymap.set('n', '<Leader>fn', function()
-  --   M.open_float_term 'node'
+  --   run.open_float_term 'node'
   -- end, { noremap = true, silent = true, desc = 'Open Node.js in floating terminal' })
   --
   -- vim.keymap.set('n', '<Leader>fp', function()
-  --   M.open_float_term 'python'
+  --   run.open_float_term 'python'
   -- end, { noremap = true, silent = true, desc = 'Open Python in floating terminal' })
   --
   -- Create command for use with arguments
