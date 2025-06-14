@@ -180,6 +180,39 @@ return {
         end
       end
 
+      -- YANK HIGHLIGHTING CONFIGURATION
+      -- Create autogroup for yank highlighting
+      local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+
+      -- Function to set up yank highlight colors
+      local setup_yank_highlight = function()
+        vim.api.nvim_set_hl(0, 'YankHighlight', { bg = '#e0def4', fg = '#1f1d2e' })
+      end
+
+      -- Set initial yank highlight
+      setup_yank_highlight()
+
+      -- Recreate highlight after any colorscheme change
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        callback = function()
+          vim.defer_fn(function()
+            setup_yank_highlight()
+          end, 10)
+        end,
+      })
+
+      -- Yank highlighting autocmd
+      vim.api.nvim_create_autocmd('TextYankPost', {
+        callback = function()
+          vim.hl.on_yank {
+            higroup = 'YankHighlight',
+            timeout = 50,
+          }
+        end,
+        group = highlight_group,
+        pattern = '*',
+      })
+
       -- Initialize with default theme
       setup_catppuccin()
 

@@ -25,19 +25,3 @@ vim.diagnostic.config {
     vim.cmd 'highlight DiagnosticVirtualText guibg=NONE'
   end,
 }
-
--- Highlight on yank with custom color
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-
--- First, define a custom highlight group for yank highlighting
-vim.api.nvim_set_hl(0, 'YankHighlight', { bg = '#e0def4', fg = '#1f1d2e' }) -- Dark gray background, yellow text
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.hl.on_yank {
-      higroup = 'YankHighlight', -- Use your custom highlight group
-      timeout = 50,              -- Duration in milliseconds
-    }
-  end,
-  group = highlight_group,
-  pattern = '*',
-})
