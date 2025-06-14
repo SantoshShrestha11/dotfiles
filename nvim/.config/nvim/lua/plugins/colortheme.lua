@@ -1,7 +1,7 @@
 -- lua/plugins/colorscheme.lua
 return {
-  'rose-pine/neovim',
-  -- 'catppuccin/nvim',
+  -- 'rose-pine/neovim',
+  'catppuccin/nvim',
   lazy = false,    -- Ensure the theme is loaded immediately
   priority = 1000, -- High priority to load the theme early
   opts = {
@@ -46,14 +46,26 @@ return {
   },
   config = function()
     -- Configure the catppuccin theme
-    require('rose-pine').setup {
+    require('catppuccin').setup {
       transparent_background = false, -- Start with solid background (better for toggle)
       disable_float_background = false,
       bold_vert_split = false,
+
+      -- These are the one of the rose-pine
+      -- styles = {
+      --   bold = true,
+      --   italic = true,
+      --   transparency = false,
+      -- },
+
+      -- These are  the one of the catppuccin
+      no_italic = false,    -- Force no italic
+      no_bold = false,      -- Force no bold
+      no_underline = false, -- Force no underline
     }
 
     -- Apply the colorscheme
-    vim.cmd.colorscheme 'rose-pine'
+    vim.cmd.colorscheme 'catppuccin'
 
     -- Background transparency toggle
     local bg_transparent = false -- Start with solid background
