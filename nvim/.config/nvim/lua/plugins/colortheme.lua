@@ -1,6 +1,7 @@
--- lua/plugins/rose-pine.lua
+-- lua/plugins/colorscheme.lua
 return {
   'rose-pine/neovim',
+  -- 'catppuccin/nvim',
   lazy = false,    -- Ensure the theme is loaded immediately
   priority = 1000, -- High priority to load the theme early
   opts = {
@@ -44,10 +45,10 @@ return {
     },
   },
   config = function()
-    -- Configure the rose-pine theme
+    -- Configure the catppuccin theme
     require('rose-pine').setup {
-      disable_background = true, -- Start with a transparent background
-      disable_float_background = true,
+      transparent_background = false, -- Start with solid background (better for toggle)
+      disable_float_background = false,
       bold_vert_split = false,
     }
 
@@ -55,22 +56,36 @@ return {
     vim.cmd.colorscheme 'rose-pine'
 
     -- Background transparency toggle
-    local bg_transparent = true
+    local bg_transparent = false -- Start with solid background
+    local original_normal_bg = nil
+    local original_float_bg = nil
 
     local toggle_transparency = function()
       bg_transparent = not bg_transparent
+
       if bg_transparent then
+        -- Store original backgrounds before making transparent
+        if original_normal_bg == nil then
+          local normal_hl = vim.api.nvim_get_hl(0, { name = 'Normal' })
+          local float_hl = vim.api.nvim_get_hl(0, { name = 'NormalFloat' })
+          original_normal_bg = normal_hl.bg
+          original_float_bg = float_hl.bg
+        end
+
         -- Enable transparent background
         vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
         vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+        print 'Transparency enabled'
       else
-        -- Disable transparent background
-        vim.api.nvim_set_hl(0, 'Normal', { bg = nil })
-        vim.api.nvim_set_hl(0, 'NormalFloat', { bg = nil })
+        -- Restore original backgrounds
+        vim.api.nvim_set_hl(0, 'Normal', { bg = original_normal_bg })
+        vim.api.nvim_set_hl(0, 'NormalFloat', { bg = original_float_bg })
+        print 'Transparency disabled'
       end
     end
 
     -- Map a key to toggle transparency
-    vim.keymap.set('n', '<leader>bg', toggle_transparency, { noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>bg', toggle_transparency,
+      { noremap = true, silent = true, desc = 'Toggle background transparency' })
   end,
 }
