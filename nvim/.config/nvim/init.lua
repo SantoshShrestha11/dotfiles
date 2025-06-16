@@ -3,6 +3,7 @@ require 'core.keymaps' -- Load general keymaps
 require 'core.snippets' -- Custom code snippets
 require('core.code-runner').setup() -- Load code-runner
 vim.opt.termguicolors = true
+vim.opt.fillchars:append { eob = ' ' } -- Remove the `~` symbol from the end of the buffer
 
 -- Set up the Lazy plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
