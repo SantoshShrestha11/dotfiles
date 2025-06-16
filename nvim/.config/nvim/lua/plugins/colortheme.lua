@@ -22,11 +22,12 @@ return {
       local setup_catppuccin = function()
         require('catppuccin').setup {
           transparent_background = false,
+          show_end_of_buffer = false,
           disable_float_background = false,
           bold_vert_split = false,
           -- Catppuccin-specific styling options
-          no_italic = false,    -- Allow italic text
-          no_bold = false,      -- Allow bold text
+          no_italic = false, -- Allow italic text
+          no_bold = false, -- Allow bold text
           no_underline = false, -- Allow underlined text
           integrations = {
             aerial = true,
@@ -135,7 +136,7 @@ return {
       local select_theme = function()
         local themes = {
           { name = 'catppuccin', setup = setup_catppuccin },
-          { name = 'rose-pine',  setup = setup_rose_pine },
+          { name = 'rose-pine', setup = setup_rose_pine },
         }
 
         vim.ui.select(themes, {
