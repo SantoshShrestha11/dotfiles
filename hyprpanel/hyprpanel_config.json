@@ -1,4 +1,6 @@
 {
+  "theme.bar.floating": false,
+  "theme.bar.location": "top",
   "log_level": "LOG_LEVEL_INFO",
   "log_subprocesses_to_journal": true,
   "dbus": {
@@ -191,7 +193,6 @@
   "theme.font.size": "1rem",
   "theme.font.weight": 400,
   "tear": false,
-  "theme.bar.floating": false,
   "theme.bar.buttons.enableBorders": false,
   "theme.bar.border.location": "none",
   "bar.launcher.autoDetectIcon": true,
@@ -266,7 +267,6 @@
   "menus.dashboard.stats.enabled": false,
   "menus.volume.raiseMaximumVolume": true,
   "bar.autoHide": "never",
-  "theme.bar.location": "top",
   "theme.bar.buttons.bluetooth.enableBorder": false,
   "bar.bluetooth.label": true,
   "bar.battery.scrollUp": "brightnessctl s 10%+",
@@ -289,5 +289,7 @@
   "menus.dashboard.shortcuts.left.shortcut2.icon": "",
   "menus.dashboard.shortcuts.left.shortcut2.tooltip": "Github",
   "bar.launcher.middleClick": "zen-browser https://aur.archlinux.org/",
-  "bar.clock.middleClick": "/home/santosh/.local/scripts/pomodoro\n"
+  "bar.clock.middleClick": "/home/santosh/.local/scripts/pomodoro\n",
+  "bar.volume.scrollDown": "hyprpanel vol +5",
+  "bar.volume.scrollUp": "hyprpanel vol -5"
 }
