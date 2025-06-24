@@ -223,7 +223,7 @@ return {
           },
         },
       },
-      -- dockerls = {},
+      dockerls = {},
       -- sqlls = {},
       -- terraformls = {},
       -- jsonls = {},
