@@ -75,3 +75,5 @@ git switch "$current_branch" || {
 }
 
 echo "Script completed successfully."
+
+hyprctl reload
