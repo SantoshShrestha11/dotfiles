@@ -87,4 +87,4 @@ eval "$(starship init zsh)"
 #PATHS here
 export PATH=~/bin:$PATH
 export PATH=~/.local/scripts/:$PATH
-fastfetch --logo-color-1  red 
+# fastfetch --logo-color-1  red 
